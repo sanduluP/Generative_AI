@@ -53,6 +53,12 @@ chunking_option = st.selectbox(
     ["Text Chunking", "Sentence Chunking"]
 )
 
+retrieval_method = st.selectbox(
+    "Select Retrieval Method:",
+    ["Vector Search", "Hybrid Search (Vector + Keyword)"],
+    key="retrieval_method_select"
+)
+
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
