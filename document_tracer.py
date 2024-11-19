@@ -48,16 +48,20 @@ with col2:
 api_key_label = f"Enter your {provider} API Key:"
 api_key = st.text_input(api_key_label, type="password", key="api_key_input")
 
-chunking_option = st.selectbox(
-    "Select Chunking Method:",
-    ["Text Chunking", "Sentence Chunking"]
-)
+col1, col2 = st.columns(2)
 
-retrieval_method = st.selectbox(
-    "Select Retrieval Method:",
-    ["Vector Search", "Hybrid Search (Vector + Keyword)"],
-    key="retrieval_method_select"
-)
+with col1:
+    chunking_option = st.selectbox(
+        "Select Chunking Method:",
+        ["Text Chunking", "Sentence Chunking"]
+    )
+
+with col2:
+    retrieval_method = st.selectbox(
+        "Select Retrieval Method:",
+        ["Vector Search", "Hybrid Search (Vector + Keyword)"],
+        key="retrieval_method_select"
+    )
 
 def get_pdf_text(pdf_docs):
     text = ""
