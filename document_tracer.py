@@ -128,11 +128,11 @@ def user_input(user_question, api_key):
     st.write("Reply: ", response["output_text"])
 
 def main():
-    st.header("AI clone chatbot💁")
+    st.header("TraceBack AI💁")
 
-    user_question = st.text_input("Ask a Question from the PDF Files", key="user_question")
+    user_question = st.text_input("Ask and Explore Your PDF Files", key="user_question")
 
-    if user_question and api_key:  # Ensure API key and user question are provided
+    if user_question and api_key:
         user_input(user_question, api_key)
 
     with st.sidebar:
